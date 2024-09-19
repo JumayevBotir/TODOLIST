@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+
+body {
+  font-family: 'Varela', sans-serif;
+  height: 100vh;
+  background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(./andrea-de-santis-3vpXEmG3dbQ-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+}
+.event{
+  display: none;
+}
+.show-btn{
+  padding: 20px 35px;
+  border-radius: 14px;
+  position: relative;
+  outline: none;
+  border: none;
+  z-index: 1;
+  color: white;
+}
+.show-btn::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background:linear-gradient(45deg, red,blue,yellow,green,white);
+  animation: dey 6s linear infinite;
+  background-size: 600%;
+  transition: opacity 0.3s ease-in-out;
+  filter: blur(4px);
+  opacity: 0;
+  z-index: -1;
+  padding: 5px;
+  border-radius: 13px;;
+}
+.show-btn::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: #1281dd;
+  z-index: -1;
+  border-radius: 12px;
+  border: 1px solid #555;
+}
+
+@keyframes dey{
+  
+      0% {
+      background-position: 0 0;
+      }
+      50% {
+          background-position: 400% 0;
+      }
+      100% {
+          background-position: 0 0;
+      }
+  }
+  .show-btn:hover::before{
+      opacity: 1;
+      
+
+  }
+  .show-btn:hover{
+      cursor: pointer;
+      background: transparent;
+  }
+  .modal{
+    position: fixed;
+    background-color: aliceblue;
+    max-width: 600px;
+    width: 100%;
+    padding: 19px;
+    border-radius: 13px;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+  }
+  .modal-headr{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+  .x-btn{
+    border: none;
+    outline: none;
+    background: inherit;
+   
+  }
+  h2{
+    padding-bottom: 14px;
+  }
+  .overly{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+   backdrop-filter: blur(4px);
+   z-index: -4;
+  }
