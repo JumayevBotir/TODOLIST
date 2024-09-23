@@ -28,6 +28,7 @@ body{
   font-size: 70px;
   font-weight: 900;
   color: rgb(87, 255, 20);
+  margin: auto 20px;
 }
 .btn{
  padding: 8px 23px;
