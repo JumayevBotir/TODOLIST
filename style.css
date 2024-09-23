@@ -15,9 +15,8 @@ body{
    outline: none;
    background-color: blue;
    color: aliceblue;
-   font-size: 40px;
-   max-width: 400px;
-   width: 100%;
+   font-size: 35px;
+   width: 350px;
    margin: 5px;
 }
 #form{
@@ -39,4 +38,8 @@ body{
  color: rgb(14, 12, 13);
 }
 
-
+@media(max-width:400px){
+  .number{
+    width: 300px;
+  }
+}

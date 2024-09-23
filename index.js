@@ -1,12 +1,14 @@
 let result=document.getElementById('number');
 let result1=document.getElementById('btn');
 let form=document.getElementById('form')
+let f='0<n<999'
 let a=['noll','bir','ikki','uch','tort','besh','olti','yetti','sakkiz',`to'qqiz`,`o'n`];
 let b=["","",'yegirma',`o'ttiz`,'qirq','ellik','oltmish','yetmish','sakson',`to'qson`];
 let c='yuz';
 function son(n){
-    if(n<0||n>999){
-        return(`son 0<n<999 oraliqda bolishi kerak`)
+    if(n>999 || n<0     ){
+        return (` kiritilgan son 
+            meyorlarga mos kelmadi`)
     }
     else if(n<=10) {
         return(a[n])
@@ -32,14 +34,20 @@ function son(n){
         else{
             return(a[res1]+' '+c+' '+b[res4]+' '+a[res3])
         }
-    }    
-}son(1000);
+    }  
+
+}son();
 
 result1.addEventListener('click', (e)=>{
     e.preventDefault();
     let n=parseInt(result.value)
     let otput=son(n);
-   form.innerHTML=otput;
+   if(isNaN(n)){
+    result.placeholder='Iltimos sonni kiriting';
+   }
+   else{
+    form.innerHTML=otput;
+   }
 })
 
 
