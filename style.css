@@ -16,7 +16,7 @@ body{
    background-color: blue;
    color: aliceblue;
    font-size: 35px;
-   width: 350px;
+   width: 360px;
    margin: 5px;
 }
 #form{
@@ -39,8 +39,4 @@ body{
  color: rgb(14, 12, 13);
 }
 
-@media(max-width:400px){
-  .number{
-    width: 300px;
-  }
-}
+
