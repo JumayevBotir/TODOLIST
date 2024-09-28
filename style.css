@@ -4,10 +4,15 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   margin: 0;
   height: 100vh;
   overflow: hidden;
-}
+  gap: 30px;
+  font-size: 40px;
+  font-weight: 700;
+
+color: aqua;}
 .number{
    padding: 12px 12px;
    border-radius: 10px;
@@ -16,19 +21,22 @@ body{
    background-color: blue;
    color: aliceblue;
    font-size: 35px;
-   width: 360px;
+   width: 300px;
    margin: 5px;
 }
-#form{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
-  font-size: 70px;
-  font-weight: 900;
-  color: rgb(87, 255, 20);
-  margin: auto 5px;
-  text-align: center;
+.number::placeholder{
+  font-size: 25px;
+}
+.select{
+  padding: 12px 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: rgb(14, 164, 19);
+  color: aliceblue;
+  font-size: 35px;
+  width: 300px;
+  margin: 5px;
 }
 .btn{
  padding: 8px 23px;
@@ -37,6 +45,7 @@ body{
  border: none;
  outline: none;
  color: rgb(14, 12, 13);
+ background-color: chocolate;
 }
 
 
