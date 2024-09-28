@@ -8,11 +8,18 @@ body{
   margin: 0;
   height: 100vh;
   overflow: hidden;
+ 
+
+color: aqua;}
+.nav{
   gap: 30px;
   font-size: 40px;
   font-weight: 700;
-
-color: aqua;}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .number{
    padding: 12px 12px;
    border-radius: 10px;
@@ -47,5 +54,25 @@ color: aqua;}
  color: rgb(14, 12, 13);
  background-color: chocolate;
 }
-
-
+.refresh{
+  padding: 8px 23px;
+  font-size: 28px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: rgb(14, 12, 13);
+  background-color: chocolate;
+  margin-top: 40px;
+  display: none;
+}
+.refresh1{
+  padding: 8px 23px;
+  font-size: 28px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: rgb(14, 12, 13);
+  background-color: chocolate;
+  margin-top: 40px;
+  display: block;
+}

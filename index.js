@@ -1,5 +1,5 @@
 let a=document.querySelector('.number');
-let body=document.querySelector('body');
+let nav=document.querySelector('.nav');
 let select=document.querySelector('select');
 function summ(){
 return ((100*a.value)/1270000).toFixed(2);
@@ -10,11 +10,20 @@ function sum1(){
 let btn=document.querySelector('.btn');
 btn.addEventListener('click',()=>{
   let selectValue= select.value;
-  let rez;
+  btn.disabled = !a.value;
   if(selectValue==='$'){
-   body.innerHTML= `Natija:${summ()} $`
+   nav.innerHTML= `Natija:${summ()} $`
   }
   else if(selectValue===`rub`) {
-   body.innerHTML=`Natija:${sum1()} rubl`
+   nav.innerHTML=`Natija:${sum1()} rubl`
   }
+  w.classList.remove('refresh')
+  w.classList.add('refresh1')
+});
+
+let w=document.querySelector('#e');
+w.classList.add('refresh');
+
+w.addEventListener('click',()=>{
+  location.reload()
 })
