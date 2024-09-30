@@ -1,25 +1,58 @@
-let a=document.querySelector('.number');
-let nav=document.querySelector('.nav');
-let select=document.querySelector('select');
-function summ(){
-return ((100*a.value)/1270000).toFixed(2);
-};
-function sum1(){
-  return ((1000*a.value)/136000).toFixed(2);
-};
+
 let btn=document.querySelector('.btn');
+let km=document.querySelector('.number')
+let m1=document.querySelector('.masofa1')
+let m2=document.querySelector('.masofa2')
+let m3=document.querySelector('.masofa3')
+let m4=document.querySelector('.masofa4')
+function piyoda(){
+  return Math.floor((km.value/3.6))
+}
+function piyoda1(){
+  return Math.floor(((km.value%3.6)*60)/3.6)
+}
+function velo(){
+  return (km.value/20.1).toFixed()
+}
+function velo1(){
+  return (((km.value%20.1)*60)/20.1).toFixed()
+}
+function car() {
+  return (km.value/70).toFixed()
+}
+function car1() {
+  return (((km.value%70)*60)/70).toFixed()
+}
+function sam(){
+  return (km.value/800).toFixed()
+}
+function sam1(){
+  return (((km.value%800)*60)/800).toFixed()
+}
 btn.addEventListener('click',()=>{
-  let selectValue= select.value;
-  btn.disabled = !a.value;
-  if(selectValue==='$'){
-   nav.innerHTML= `Natija:${summ()} $`
+  let valu=km.value.trim();
+  if(valu===''||isNaN(valu)){
+    km.placeholder  ='Msofani kiriting'
+    return;
   }
-  else if(selectValue===`rub`) {
-   nav.innerHTML=`Natija:${sum1()} rubl`
+  else{
+    w.classList.remove('refresh')
+    w.classList.add('refresh1')
+    
   }
-  w.classList.remove('refresh')
-  w.classList.add('refresh1')
-});
+ m1.innerHTML=`${piyoda()} soat ${piyoda1() } daqiqa`;
+ m2.innerHTML=`${velo()} soat ${velo1()} daqiqa`;
+ m3.innerHTML=`${car()} soat ${car1()} daqiqa `;
+ m4.innerHTML=`${sam()} soat ${sam1()} daqiqa`
+ km.value="";
+
+
+})
+
+
+
+
+
 
 let w=document.querySelector('#e');
 w.classList.add('refresh');
