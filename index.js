@@ -1,62 +1,68 @@
-
 let btn=document.querySelector('.btn');
-let km=document.querySelector('.number')
-let m1=document.querySelector('.masofa1')
-let m2=document.querySelector('.masofa2')
-let m3=document.querySelector('.masofa3')
-let m4=document.querySelector('.masofa4')
-function piyoda(){
-  return Math.floor((km.value/3.6))
-}
-function piyoda1(){
-  return Math.floor(((km.value%3.6)*60)/3.6)
-}
-function velo(){
-  return (km.value/20.1).toFixed()
-}
-function velo1(){
-  return (((km.value%20.1)*60)/20.1).toFixed()
-}
-function car() {
-  return (km.value/70).toFixed()
-}
-function car1() {
-  return (((km.value%70)*60)/70).toFixed()
-}
-function sam(){
-  return (km.value/800).toFixed()
-}
-function sam1(){
-  return (((km.value%800)*60)/800).toFixed()
-}
-btn.addEventListener('click',()=>{
-  let valu=km.value.trim();
-  if(valu===''||isNaN(valu)){
-    km.placeholder  ='Msofani kiriting'
-    return;
-  }
-  else{
-    w.classList.remove('refresh')
-    w.classList.add('refresh1')
-    
-  }
- m1.innerHTML=`${piyoda()} soat ${piyoda1() } daqiqa`;
- m2.innerHTML=`${velo()} soat ${velo1()} daqiqa`;
- m3.innerHTML=`${car()} soat ${car1()} daqiqa `;
- m4.innerHTML=`${sam()} soat ${sam1()} daqiqa`
- km.value="";
-
-
+let modal=document.querySelector('#modal');
+let dal=document.querySelector('.dal');
+let canel=document.querySelector('.canel');
+btn.addEventListener('click',(e)=>{
+    modal.classList.add('modalone')
+    modal.classList.remove('modal')
 })
+dal.addEventListener('click',()=>{
+    modal.classList.remove('modalone')
+    modal.classList.add('modal')
+});
+canel.addEventListener('click', ()=>{
+    modal.classList.remove('modalone')
+    modal.classList.add('modal')
+});
+let modalBtn=document.querySelector('#add');
+let modText=document.querySelector('.mod-text');
 
 
-
-
-
-
-let w=document.querySelector('#e');
-w.classList.add('refresh');
-
-w.addEventListener('click',()=>{
-  location.reload()
-})
+modalBtn.addEventListener('click',()=>{
+    var text=document.querySelector('.text');
+var div =document.createElement('div');
+var dalete=document.createElement('button');
+var newText=document.createElement('p');
+let ref= document.createElement('button');
+let divOne=document.createElement('div');
+let chekBox=document.createElement('input');
+let divtwo=document.createElement('div');
+    if(modText.value.trim() !==""){
+        dalete.innerHTML='🗑️';
+        ref.innerHTML='🖋️';
+        newText.textContent=modText.value
+        document.querySelector('.nav-bottom').appendChild(div);
+        divtwo.appendChild(chekBox)
+        divtwo.appendChild(newText);
+        divOne.appendChild(dalete);
+        divOne.appendChild(ref);
+        div.appendChild(divtwo)
+        div.appendChild(divOne);
+        chekBox.classList.add('chek')
+        divOne.classList.add('One');
+        ref.classList.add('dalete')
+        div.classList.add('yangi')
+        dalete.classList.add('dalete')
+        chekBox.type = 'checkbox';
+        
+        text.style.display = 'none';
+        divtwo.classList.add('One')
+    }
+    modText.value='';
+    modal.classList.remove('modalone')
+    modal.classList.add('modal')
+    dalete.addEventListener('click',()=>{
+        div.remove();
+        if(document.querySelector('.nav-bottom').children.length===1){
+             text.style.display='block';
+        }
+     })
+     ref.addEventListener('click', () => {
+        modal.classList.add('modalone');
+        modal.classList.remove('modal');
+        modText.value = newText.textContent;
+        modalBtn.addEventListener('click', () => {
+           div.remove()
+        });
+    });
+});

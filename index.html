@@ -7,35 +7,38 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="nav">
-    <h1 class="title">Sayohat</h1>
-    <div class="nav-top">
-      <p class="text">Masofa</p>
-      <input type="number" class="number" placeholder="Masofani kirit(km)">
-      <button class="btn" type="submit">Hisobla</button>
-      
+  
+    <h1 class="title">TODO LIST</h1>
+    <div class="nav">
+      <div class="nav-top">
+        <button class="btn" type="submit">Add task</button>
+        <select name="" id="select" class="select">
+          <option value="1">All</option>
+          <option value="2">Incomplate</option>
+          <option value="3">Complated</option>
+        </select>
+      </div>
+      <div class="nav-bottom">
+        <p class="text">No Todos</p>
+      </div>
     </div>
-    <nav class="bottom">
-      <div class="item">
-        <img src="./Screenshot 2024-09-29 215536.png" alt="" >
-        <p class="masofa1">N soat</p>
+    <div class="modal " id="modal">
+      <div class="x">      <button class="dal"><img src="./360_F_75691329_CLLuXHPb6zqvgBnFkQjVnufsLEtmbL3e.jpg" alt="" width="30px" ></button>
       </div>
-      <div class="item">
-        <img src="./Screenshot 2024-09-29 215626.png" alt="">
-        <p class="masofa2">N soat</p>
-      </div>
-      <div class="item">
-        <img src="./Screenshot 2024-09-29 215734.png" alt="">
-
-        <p class="masofa3">N soat</p>
-      </div>
-      <div class="item">
-        <img src="./Screenshot 2024-09-29 215838.png" alt="">
-        <p class="masofa4">N soat</p>
-      </div>
-       </nav>
-       <button class="refresh" id="e">refresh</button>
-  </div>
+      <h2 class="subtitle">Add Todo</h2>
+       <p class="modal-text">Title</p>
+       <input type="text" class="mod-text">
+       <p class="status">Status</p>
+       <select name="" id="select_one" class="modalSelect">
+        <option value="1">Incomplate</option>
+        <option value="2">Complated</option>
+    
+       </select>
+       <div class="mod">
+        <button class="modakbtn" id="add">Add Task</button>
+        <button class="canel">Cancel</button>
+       </div>
+    </div>
   <script src="./index.js">
 
   </script>
