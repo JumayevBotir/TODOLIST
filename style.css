@@ -179,3 +179,13 @@ display: block;
   width: 25px;
   height: 25px;
 }
+@media(max-width:500px){
+  .nav{
+    width: 99%;
+  }
+  .modalone{
+    width: 90%;
+    left: 5%;
+    top: 10%;
+  }
+}
